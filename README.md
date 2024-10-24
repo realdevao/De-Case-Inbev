@@ -103,34 +103,5 @@ The tests cover the API data fetching, data transformation, and aggregation proc
 * Storing the result in Parquet format with the count of breweries per type and location.
 
 
-### Cloud Integration (Optional)
-This pipeline is designed to be expandable to cloud environments such as AWS or Google Cloud. Here are some options for cloud integration:
-
-#### AWS S3
-You can modify the storage paths to store the data in Amazon S3:
-~~~python
-df.to_parquet('s3://my-bucket/silver_layer/breweries_partitioned', partition_cols=['state'])
-~~~
-Make sure to configure your AWS credentials within Airflow using environment variables or AWS IAM roles.
-
-#### Google Cloud Storage (GCS)
-Similarly, you can store the data in GCS:
-
-~~~python
-df.to_parquet('gs://my-bucket/silver_layer/breweries_partitioned', partition_cols=['state'])
-~~~
-
-
-### Future Improvements
-Here are some ideas for future improvements to this project:
-
-* Advanced Data Validation: Add further validation steps in the Silver Layer, such as field format checks and deduplication.
-* Cloud Deployment: Implement a cloud-based data lake using services like AWS S3 or Google Cloud Storage.
-* Business Intelligence Integration: Connect the Gold Layer to a BI tool like Power BI or Tableau for visualizing the data insights.
-* Additional APIs: Extend the pipeline to fetch and process data from other public APIs.
-
-
 ### Conclusion
 This project implements a complete ETL pipeline using Apache Airflow to consume, transform, and aggregate data following the Medallion Architecture. It includes layers for raw data, curated data, and aggregated data, all containerized in Docker for easy setup.
-
-Feel free to fork this project and expand upon it!
