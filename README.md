@@ -46,8 +46,8 @@ To run this project, ensure you have the following installed:
 
 #### 1. Clone the repository
 ~~~bash
-git clone https://github.com/username/brewery-data-pipeline.git
-cd brewery-data-pipeline
+git clone https://github.com/realdevao/De-Case-Inbev
+cd De-Case-Inbev
 ~~~
 
 #### 2. Start the Airflow environment with Docker Compose
