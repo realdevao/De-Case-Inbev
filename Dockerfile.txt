@@ -1,0 +1,11 @@
+# Imagem base oficial do Airflow
+FROM apache/airflow:2.9.0
+
+# Instalar dependências necessárias
+RUN pip install --no-cache-dir \
+    requests \
+    pandas \
+    pyarrow
+
+# Copiar DAGs para o contêiner
+COPY dags /opt/airflow/dags
